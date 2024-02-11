@@ -14,8 +14,8 @@ set(TEST_LIBS ${LIBS} GTest::gtest GTest::gtest_main GTest::gmock GTest::gmock_m
 add_executable(alp main.cpp
         src/util/log-util.h
         src/util/set-util.h
-        src/lexer/tokenizer.cpp
-        src/lexer/tokenizer.h
+        src/lexer/lexer.cpp
+        src/lexer/lexer.h
         src/lexer/Token.cpp
         src/lexer/Token.h
 )
@@ -29,8 +29,8 @@ target_link_libraries(alp PRIVATE ${LIBS})
 add_executable(alp-test test/test.cpp
         src/util/log-util.h
         src/util/set-util.h
-        src/lexer/tokenizer.cpp
-        src/lexer/tokenizer.h
+        src/lexer/lexer.cpp
+        src/lexer/lexer.h
         src/lexer/Token.cpp
         src/lexer/Token.h
         test/util/test-util.h

@@ -56,8 +56,8 @@ build CMakeFiles/alp.dir/main.cpp.o: CXX_COMPILER__alp_unscanned_Debug /Users/ap
   OBJECT_DIR = CMakeFiles/alp.dir
   OBJECT_FILE_DIR = CMakeFiles/alp.dir
 
-build CMakeFiles/alp.dir/src/lexer/tokenizer.cpp.o: CXX_COMPILER__alp_unscanned_Debug /Users/apetrusca/alpine/alpine-lang/src/lexer/tokenizer.cpp || cmake_object_order_depends_target_alp
-  DEP_FILE = CMakeFiles/alp.dir/src/lexer/tokenizer.cpp.o.d
+build CMakeFiles/alp.dir/src/lexer/lexer.cpp.o: CXX_COMPILER__alp_unscanned_Debug /Users/apetrusca/alpine/alpine-lang/src/lexer/lexer.cpp || cmake_object_order_depends_target_alp
+  DEP_FILE = CMakeFiles/alp.dir/src/lexer/lexer.cpp.o.d
   FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
   INCLUDES = -isystem /Users/apetrusca/.vcpkg/installed/arm64-osx/include
   OBJECT_DIR = CMakeFiles/alp.dir
@@ -78,7 +78,7 @@ build CMakeFiles/alp.dir/src/lexer/Token.cpp.o: CXX_COMPILER__alp_unscanned_Debu
 #############################################
 # Link the executable alp
 
-build alp: CXX_EXECUTABLE_LINKER__alp_Debug CMakeFiles/alp.dir/main.cpp.o CMakeFiles/alp.dir/src/lexer/tokenizer.cpp.o CMakeFiles/alp.dir/src/lexer/Token.cpp.o | /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/libfmtd.a
+build alp: CXX_EXECUTABLE_LINKER__alp_Debug CMakeFiles/alp.dir/main.cpp.o CMakeFiles/alp.dir/src/lexer/lexer.cpp.o CMakeFiles/alp.dir/src/lexer/Token.cpp.o | /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/libfmtd.a
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
   LINK_LIBRARIES = /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/libfmtd.a
   OBJECT_DIR = CMakeFiles/alp.dir
@@ -103,8 +103,8 @@ build CMakeFiles/alp-test.dir/test/test.cpp.o: CXX_COMPILER__alp-test_unscanned_
   OBJECT_DIR = CMakeFiles/alp-test.dir
   OBJECT_FILE_DIR = CMakeFiles/alp-test.dir/test
 
-build CMakeFiles/alp-test.dir/src/lexer/tokenizer.cpp.o: CXX_COMPILER__alp-test_unscanned_Debug /Users/apetrusca/alpine/alpine-lang/src/lexer/tokenizer.cpp || cmake_object_order_depends_target_alp-test
-  DEP_FILE = CMakeFiles/alp-test.dir/src/lexer/tokenizer.cpp.o.d
+build CMakeFiles/alp-test.dir/src/lexer/lexer.cpp.o: CXX_COMPILER__alp-test_unscanned_Debug /Users/apetrusca/alpine/alpine-lang/src/lexer/lexer.cpp || cmake_object_order_depends_target_alp-test
+  DEP_FILE = CMakeFiles/alp-test.dir/src/lexer/lexer.cpp.o.d
   FLAGS = -g -std=gnu++2b -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk -fcolor-diagnostics
   INCLUDES = -isystem /Users/apetrusca/.vcpkg/installed/arm64-osx/include
   OBJECT_DIR = CMakeFiles/alp-test.dir
@@ -125,7 +125,7 @@ build CMakeFiles/alp-test.dir/src/lexer/Token.cpp.o: CXX_COMPILER__alp-test_unsc
 #############################################
 # Link the executable alp-test
 
-build alp-test: CXX_EXECUTABLE_LINKER__alp-test_Debug CMakeFiles/alp-test.dir/test/test.cpp.o CMakeFiles/alp-test.dir/src/lexer/tokenizer.cpp.o CMakeFiles/alp-test.dir/src/lexer/Token.cpp.o | /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/libfmtd.a /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/libgtest.a /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/manual-link/libgtest_main.a /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/libgmock.a /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/manual-link/libgmock_main.a /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/libgmock.a /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/libgtest.a
+build alp-test: CXX_EXECUTABLE_LINKER__alp-test_Debug CMakeFiles/alp-test.dir/test/test.cpp.o CMakeFiles/alp-test.dir/src/lexer/lexer.cpp.o CMakeFiles/alp-test.dir/src/lexer/Token.cpp.o | /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/libfmtd.a /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/libgtest.a /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/manual-link/libgtest_main.a /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/libgmock.a /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/manual-link/libgmock_main.a /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/libgmock.a /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/libgtest.a
   FLAGS = -g -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.2.sdk
   LINK_LIBRARIES = /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/libfmtd.a  /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/libgtest.a  /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/manual-link/libgtest_main.a  /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/libgmock.a  /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/manual-link/libgmock_main.a  /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/libgmock.a  /Users/apetrusca/.vcpkg/installed/arm64-osx/debug/lib/libgtest.a
   OBJECT_DIR = CMakeFiles/alp-test.dir

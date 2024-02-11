@@ -2,7 +2,7 @@
 #include <fstream>
 #include <getopt.h>
 
-#include "src/lexer/tokenizer.h"
+#include "src/lexer/lexer.h"
 #include "src/util/log-util.h"
 
 void execute() {
@@ -26,16 +26,10 @@ void print_file(std::ifstream & file) {
 void compile(std::ifstream & file) {
     print_file(file);
 
-    Tokenizer lexer(file);
+    Lexer lexer(file);
 
     while (lexer.has_next()) {
-        Token token = lexer.get_token();
-        if (token.value == "\n") { // todo: rewrite
-            STD_LOG << "NEW_LINE";
-        } else {
-            STD_LOG << token;
-        }
-        token = lexer.get_token();
+        STD_LOG << lexer.get_token();
     }
 
     // tokenize

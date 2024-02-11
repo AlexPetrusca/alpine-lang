@@ -1,11 +1,11 @@
 #include "util/test-util.h"
-#include "../src/lexer/tokenizer.h"
+#include "../src/lexer/lexer.h"
 
 const std::string SOURCE_EXT = ".alp";
 const std::string LEXER_EXT = ".lex";
 const std::string PARSE_EXT = ".ast";
 
-void expect_output_eq(Tokenizer lexer, std::ifstream& lex_file) {
+void expect_output_eq(Lexer lexer, std::ifstream& lex_file) {
     while (lexer.has_next()) {
         Token token = lexer.get_token();
         std::string expected;
@@ -20,7 +20,7 @@ void expect_output_eq(Tokenizer lexer, std::ifstream& lex_file) {
 void test_lexer_output(const std::string& test_file_path) {
     std::ifstream source_file = open_file(test_file_path + SOURCE_EXT);
     std::ifstream lex_file = open_file(test_file_path + LEXER_EXT);
-    Tokenizer lexer(source_file);
+    Lexer lexer(source_file);
     expect_output_eq(lexer, lex_file);
 }
 

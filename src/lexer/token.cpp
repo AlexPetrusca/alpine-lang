@@ -3,22 +3,48 @@
 
 #include "token.h"
 
+// '(', ')', '=', '+', '-', '*', '/', '\n'
 std::unordered_map<Token::Type, std::string> type_name = {
     {Token::Identifier, "IDENTIFIER"},
-    {Token::Literal, "LITERAL"},
+    {Token::DecimalLiteral, "DECIMAL_LITERAL"},
+    {Token::LeftParentheses, "LEFT_PARENTHESES"},
+    {Token::RightParentheses, "RIGHT_PARENTHESES"},
+    {Token::Equals, "EQUALS"},
+    {Token::Plus, "PLUS"},
+    {Token::Minus, "MINUS"},
+    {Token::Multiply, "MULTIPLY"},
+    {Token::Divide, "DIVIDE"},
     {Token::NewLine, "NEW_LINE"},
-    {Token::Plus, "+"},
-    {Token::Minus, "-"},
-    {Token::Multiply, "*"},
-    {Token::Divide, "/"},
-    {Token::Equals, "="},
-    {Token::Eof, "EOF"}
+    {Token::Eof, "EOF"},
+    {Token::Unk, "UNK"}
 };
 
+Token::Token() {
+    value = "";
+    line = 0;
+    pos = 0;
+    type = Eof;
+}
+
+Token::Token(std::string value): value(std::move(value)) {
+    line = 0;
+    pos = 0;
+    type = Eof;
+}
+
 Token::Token(std::string value, const size_t line, const size_t pos): value(std::move(value)), line(line), pos(pos) {
-    type = Identifier;
+    type = Eof;
 }
 
 std::string Token::to_string() const {
-    return fmt::format("{} ({}, line: {}, pos: {})", value, type_name[type], line, pos);
+    std::string display = value;
+    if (value == "\n") {
+        display = "\\n";
+    }
+    std::string spacing = std::string((5 - display.length() / 4), '\t');
+    return fmt::format("{}{}({}, line: {}, pos: {})", display, spacing, type_name[type], line, pos);
+}
+
+std::ostream & operator<<(std::ostream &os, const Token &t) {
+    return os << t.to_string();
 }
