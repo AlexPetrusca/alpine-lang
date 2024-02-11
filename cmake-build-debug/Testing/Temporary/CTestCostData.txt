@@ -1,0 +1,4 @@
+AllTestsInMain 16 0.000153302
+TokenizerTests 22 0
+---
+TokenizerTests

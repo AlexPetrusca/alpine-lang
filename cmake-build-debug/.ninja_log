@@ -1,0 +1,27 @@
+# ninja log v5
+221	260	1707620101437210373	alp-test	dfa7a088f3bf4471
+197	232	1707621988206065966	alp	8a1b0c0c0c454f90
+0	37	1707621989508849961	build.ninja	6024859ea8d979e1
+4	278	1707621751331450009	CMakeFiles/alp.dir/main.cpp.o	1d222b645d954164
+8	313	1707604255396453478	CMakeFiles/alp-test.dir/src/tokenizer.cpp.o	8e8818870c28152f
+5	444	1707619997237905420	CMakeFiles/alp-test.dir/test/test.cpp.o	6dfe3fe20a4581b6
+3	197	1707621988170451596	CMakeFiles/alp.dir/src/lexer/Token.cpp.o	c26a9de175077eb7
+3	321	1707592690292010336	CMakeFiles/alp.dir/src/tokenizer.cpp.o	e80aa79bd79f7053
+3	447	1707592487669164390	CMakeFiles/alp.dir/test/test.cpp.o	61b3312eb444d10d
+5	221	1707620101397643161	CMakeFiles/alp-test.dir/src/lexer/Token.cpp.o	cba7080f1edaf4c0
+4	297	1707619950411907923	CMakeFiles/alp-test.dir/src/lexer/tokenizer.cpp.o	777f16a5487c9e3c
+4	300	1707621751354661216	CMakeFiles/alp.dir/src/lexer/tokenizer.cpp.o	9fbcef9d95bd8ff4
+4	206	1707622087789991311	CMakeFiles/alp.dir/src/lexer/Token.cpp.o	c26a9de175077eb7
+4	274	1707622087857683514	CMakeFiles/alp.dir/main.cpp.o	1d222b645d954164
+4	298	1707622087882520898	CMakeFiles/alp.dir/src/lexer/tokenizer.cpp.o	9fbcef9d95bd8ff4
+298	364	1707622087948720228	alp	8a1b0c0c0c454f90
+4	250	1707622394280559410	CMakeFiles/alp.dir/src/lexer/Token.cpp.o	c26a9de175077eb7
+250	285	1707622394317074612	alp	8a1b0c0c0c454f90
+3	288	1707622532658815516	CMakeFiles/alp.dir/src/lexer/tokenizer.cpp.o	9fbcef9d95bd8ff4
+288	322	1707622532695952384	alp	8a1b0c0c0c454f90
+4	295	1707622555506397838	CMakeFiles/alp.dir/src/lexer/tokenizer.cpp.o	9fbcef9d95bd8ff4
+295	331	1707622555543418581	alp	8a1b0c0c0c454f90
+4	272	1707622825281071651	CMakeFiles/alp.dir/src/lexer/Token.cpp.o	c26a9de175077eb7
+4	283	1707622825292153845	CMakeFiles/alp.dir/main.cpp.o	1d222b645d954164
+4	311	1707622825320544557	CMakeFiles/alp.dir/src/lexer/tokenizer.cpp.o	9fbcef9d95bd8ff4
+311	345	1707622825356030511	alp	8a1b0c0c0c454f90

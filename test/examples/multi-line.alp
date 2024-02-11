@@ -1,0 +1,7 @@
+// Alexandru Petrusca
+// Example alp v0.0 program
+
+x = 1 + 1
+y = 2 + 3
+z = x + y
+print(z)    // Expect: 7

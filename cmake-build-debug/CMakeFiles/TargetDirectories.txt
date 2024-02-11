@@ -1,0 +1,4 @@
+/Users/apetrusca/alpine/alpine-lang/cmake-build-debug/CMakeFiles/alp.dir
+/Users/apetrusca/alpine/alpine-lang/cmake-build-debug/CMakeFiles/alp-test.dir
+/Users/apetrusca/alpine/alpine-lang/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/apetrusca/alpine/alpine-lang/cmake-build-debug/CMakeFiles/rebuild_cache.dir

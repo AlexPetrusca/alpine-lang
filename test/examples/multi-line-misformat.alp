@@ -1,0 +1,10 @@
+ // Alexandru Petrusca
+    //  Example alp v0.0 program
+
+x   = 1+1  // comment 1
+     y = 2+  3    // comment 2
+
+ z=   x+ y// // comment 3
+    print       (  z )    // Expect: 7
+
+ // comment 4
