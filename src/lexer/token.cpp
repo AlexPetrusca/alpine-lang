@@ -3,7 +3,7 @@
 
 #include "token.h"
 
-std::unordered_map<Token::Type, std::string> type2name = {
+std::unordered_map<Token::Type, std::string> type_name = {
     {Token::Identifier, "IDENTIFIER"},
     {Token::Literal, "LITERAL"},
     {Token::NewLine, "NEW_LINE"},
@@ -20,5 +20,5 @@ Token::Token(std::string value, const size_t line, const size_t pos): value(std:
 }
 
 std::string Token::to_string() const {
-    return fmt::format("{} ({}, line: {}, pos: {})", value, type2name[type], line, pos);
+    return fmt::format("{} ({}, line: {}, pos: {})", value, type_name[type], line, pos);
 }
