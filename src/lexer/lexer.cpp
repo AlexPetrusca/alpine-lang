@@ -1,5 +1,4 @@
 #include "lexer.h"
-
 #include "../util/set-util.h"
 
 const std::set WHITESPACE_CHARS = {' ', '\t'};
@@ -49,7 +48,7 @@ void Lexer::advance_token() {
     }
 }
 
-void Lexer::consume_char(char ch) {
+void Lexer::consume_char(const char ch) {
     // update value
     next_token.value += ch;
     advance_char();

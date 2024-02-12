@@ -24,22 +24,22 @@ void test_lexer_output(const std::string& test_file_path) {
     expect_output_eq(lexer, lex_file);
 }
 
-TEST(TokenizerTest, OneToken) {
-    test_lexer_output("examples/one-token");
+TEST(LexerTest, OneToken) {
+    test_lexer_output("resources/one-token");
 }
 
-TEST(TokenizerTest, OneLine) {
-    test_lexer_output("examples/one-line");
+TEST(LexerTest, OneLine) {
+    test_lexer_output("resources/one-line");
 }
 
-TEST(TokenizerTest, MultiLine) {
-    test_lexer_output("examples/multi-line");
+TEST(LexerTest, MultiLine) {
+    test_lexer_output("resources/multi-line");
 }
 
-TEST(TokenizerTest, MultiLinePadded) {
-    test_lexer_output("examples/multi-line-padded");
+TEST(LexerTest, MultiLinePadded) {
+    test_lexer_output("resources/multi-line-padded");
 }
 
-TEST(TokenizerTest, MultiLineMisformat) {
-    test_lexer_output("examples/multi-line-misformat");
+TEST(LexerTest, MultiLineMisformat) {
+    test_lexer_output("resources/multi-line-misformat");
 }

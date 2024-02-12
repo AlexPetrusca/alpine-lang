@@ -3,8 +3,7 @@
 
 #include "token.h"
 
-// '(', ')', '=', '+', '-', '*', '/', '\n'
-std::unordered_map<Token::Type, std::string> type_name = {
+static std::unordered_map<Token::Type, std::string> type_name = {
     {Token::Identifier, "IDENTIFIER"},
     {Token::DecimalLiteral, "DECIMAL_LITERAL"},
     {Token::LeftParentheses, "LEFT_PARENTHESES"},
@@ -37,11 +36,8 @@ Token::Token(std::string value, const size_t line, const size_t pos): value(std:
 }
 
 std::string Token::to_string() const {
-    std::string display = value;
-    if (value == "\n") {
-        display = "\\n";
-    }
-    std::string spacing = std::string((5 - display.length() / 4), '\t');
+    std::string display = (value != "\n") ? value : "\\n";
+    const std::string spacing((5 - display.length() / 4), '\t');
     return fmt::format("{}{}({}, line: {}, pos: {})", display, spacing, type_name[type], line, pos);
 }
 
