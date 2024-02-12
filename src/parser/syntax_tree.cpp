@@ -3,7 +3,7 @@
 
 #include "syntax_tree.h"
 
-static std::unordered_map<SyntaxTree::Type, std::string> type_name = {
+static std::unordered_map<SyntaxTree::NodeType, std::string> type_name = {
     {SyntaxTree::Root, "ROOT"},
     {SyntaxTree::BinaryOperator, "BINARY_OPERATOR"},
     {SyntaxTree::UnaryOperator, "UNARY_OPERATOR"},
@@ -20,10 +20,9 @@ SyntaxTree::SyntaxTree() {
     children = std::vector<SyntaxTree>();
 }
 
-SyntaxTree::SyntaxTree(Token token, const Type type): token(std::move(token)), type(type) {
+SyntaxTree::SyntaxTree(Token token, const NodeType type): token(std::move(token)), type(type) {
     children = std::vector<SyntaxTree>();
 }
-
 
 void SyntaxTree::add_child(const SyntaxTree &node) {
     children.push_back(node);

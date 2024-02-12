@@ -5,7 +5,7 @@
 
 class Token {
 public:
-    enum Type {
+    enum TokenType {
         Identifier,
         DecimalLiteral,
         LeftParentheses,
@@ -21,7 +21,7 @@ public:
     };
 
     std::string value;
-    Type type;
+    TokenType type;
     size_t line;
     size_t pos;
 

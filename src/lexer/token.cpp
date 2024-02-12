@@ -3,7 +3,7 @@
 
 #include "token.h"
 
-static std::unordered_map<Token::Type, std::string> type_name = {
+static std::unordered_map<Token::TokenType, std::string> type_name = {
     {Token::Identifier, "IDENTIFIER"},
     {Token::DecimalLiteral, "DECIMAL_LITERAL"},
     {Token::LeftParentheses, "LEFT_PARENTHESES"},
