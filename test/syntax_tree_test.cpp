@@ -16,6 +16,7 @@ TEST(SyntaxTreeTest, BasicConstruction) {
     EXPECT_TRUE(line2.contains("BINARY_OPERATOR"));
     const std::string line3 = strtok(nullptr, "\n");
     EXPECT_TRUE(line3.contains("INTEGER"));
-    const std::string line4 = strtok(nullptr, "\n");
+    char *line4 = strtok(nullptr, "\n");
     EXPECT_EQ(line4, nullptr);
+    delete tree_str;
 }
