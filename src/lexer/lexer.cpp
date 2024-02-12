@@ -5,13 +5,9 @@ const std::set WHITESPACE_CHARS = {' ', '\t'};
 const std::set SPECIAL_CHARS = {'(', ')', '=', '+', '-', '*', '/', '\n'};
 const std::set<char> STOP_CHARS = merge_sets(WHITESPACE_CHARS, SPECIAL_CHARS);
 
-Lexer::Lexer(std::ifstream &f): file(f) {
-    line = 0;
-    pos = 0;
-    ch = '\0';
+Lexer::Lexer(std::ifstream &f): file(f), line(0), pos(0), ch(' '), next_ch(' ') {
     token = Token();
     next_token = Token("\n"); // effectively, add a newline at start of file
-    advance_char();
     advance_token();
 }
 
@@ -48,39 +44,39 @@ void Lexer::advance_token() {
     }
 }
 
-void Lexer::consume_char(const char ch) {
-    // update value
-    next_token.value += ch;
+void Lexer::consume_char(const char c) {
+    // update token value
+    next_token.value += c;
     advance_char();
 
     // resolve type
     if (next_token.value.length() == 1) {
-        if (ch == '(') {
+        if (c == '(') {
             next_token.type = Token::LeftParentheses;
-        } else if (ch == ')') {
+        } else if (c == ')') {
             next_token.type = Token::RightParentheses;
-        } else if (ch == '=') {
+        } else if (c == '=') {
             next_token.type = Token::Equals;
-        } else if (ch == '+') {
+        } else if (c == '+') {
             next_token.type = Token::Plus;
-        } else if (ch == '-') {
+        } else if (c == '-') {
             next_token.type = Token::Minus;
-        } else if (ch == '*') {
+        } else if (c == '*') {
             next_token.type = Token::Multiply;
-        } else if (ch == '/') {
+        } else if (c == '/') {
             next_token.type = Token::Divide;
-        } else if (ch == '\n') {
+        } else if (c == '\n') {
             next_token.type = Token::NewLine;
-        } else if (isdigit(ch)) {
+        } else if (isdigit(c)) {
             next_token.type = Token::DecimalLiteral;
-        } else if (isalpha(ch) || ch == '_') {
+        } else if (isalpha(c) || c == '_') {
             next_token.type = Token::Identifier;
         }
-    } else if (isdigit(ch)) {
+    } else if (isdigit(c)) {
         if (next_token.type != Token::DecimalLiteral && next_token.type != Token::Identifier) {
             next_token.type = Token::Unk;
         }
-    } else if (isalnum(ch) || ch == '_') {
+    } else if (isalnum(c) || c == '_') {
         if (next_token.type != Token::Identifier) {
             next_token.type = Token::Unk;
         }
@@ -123,22 +119,17 @@ bool Lexer::is_empty_line() const {
 }
 
 bool Lexer::is_line_comment() const {
-    return ch == '/' && peek_char() == '/';
+    return ch == '/' && next_ch == '/';
 }
 
 void Lexer::advance_char() {
     pos++;
+    ch = next_ch;
     if (ch == '\n') {
         pos = 0;
         line++;
     }
-    ch = static_cast<char>(file.get());
-}
-
-char Lexer::peek_char() const {
-    const char c = static_cast<char>(file.get());
-    file.unget();
-    return c;
+    next_ch = static_cast<char>(file.get());
 }
 
 bool Lexer::is_eof() const {

@@ -11,6 +11,7 @@ class Lexer {
     size_t line;
     size_t pos;
     char ch;
+    char next_ch;
 
     Token token;
     Token next_token;
@@ -29,7 +30,7 @@ public:
 private:
     void advance_token();
 
-    void consume_char(char ch);
+    void consume_char(char c);
 
     void advance_char_to_next_valid();
 
@@ -38,8 +39,6 @@ private:
     void advance_char_ignore_whitespace();
 
     void advance_char();
-
-    [[nodiscard]] char peek_char() const;
 
     [[nodiscard]] bool is_eof() const;
 
