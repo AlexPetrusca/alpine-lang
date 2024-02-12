@@ -7,7 +7,7 @@ TEST(SyntaxTreeTest, BasicConstruction) {
     tree.add_child(SyntaxTree(Token("+"), SyntaxTree::BinaryOperator));
     tree.add_child(SyntaxTree(Token("1"), SyntaxTree::Integer));
 
-    std::string tree_str = tree.to_string();
+    char* tree_str = strdup(tree.to_string().c_str());
     const std::string line0 = strtok(tree_str, "\n");
     EXPECT_TRUE(line0.contains("ROOT"));
     const std::string line1 = strtok(nullptr, "\n");
@@ -16,4 +16,6 @@ TEST(SyntaxTreeTest, BasicConstruction) {
     EXPECT_TRUE(line2.contains("BINARY_OPERATOR"));
     const std::string line3 = strtok(nullptr, "\n");
     EXPECT_TRUE(line3.contains("INTEGER"));
+    const std::string line4 = strtok(nullptr, "\n");
+    EXPECT_EQ(line4, nullptr);
 }

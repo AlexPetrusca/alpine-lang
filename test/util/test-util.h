@@ -13,14 +13,4 @@ inline std::ifstream open_file(const std::string &path) {
     return file;
 }
 
-inline std::string strtok(const std::string &str, const char *delim) {
-    char *c_str = const_cast<char *>(str.c_str());
-    return {strtok(c_str, delim)};
-}
-
-inline std::string strtok_r(const std::string &str, const char *delim, char **saveptr) {
-    char *c_str = const_cast<char *>(str.c_str());
-    return {strtok_r(c_str, delim, saveptr)};
-}
-
 #endif //TEST_UTIL_H
